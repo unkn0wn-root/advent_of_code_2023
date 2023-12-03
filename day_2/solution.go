@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"strconv"
 	"strings"
@@ -34,7 +33,7 @@ func readLocalInput() string {
 	content, err := os.ReadFile(filePath)
 
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
 	return string(content)
