@@ -15,7 +15,7 @@ type
     bet: int
 
 # determine the hand type of a given hand
-proc determineHandType(hand: seq[CardLabel], wild: bool = false): HandType =
+func determineHandType(hand: seq[CardLabel], wild: bool = false): HandType =
   var handTable = initTable[CardLabel, int]()
   var duplicates: range[0..2] = 0
   var triplicate, fourOfKind, fiveOfKind = false
@@ -66,7 +66,7 @@ proc determineHandType(hand: seq[CardLabel], wild: bool = false): HandType =
     of 4..5: return FiveOfKind
 
 # compare two hands
-proc compareHands(a: Hand, b: Hand, wild: bool = false): int =
+func compareHands(a: Hand, b: Hand, wild: bool = false): int =
   for i in 0 ..< a.hand.len:
     let aOrd =
         if a.hand[i] == Joker and wild: -1
@@ -104,7 +104,7 @@ func sumBetsFromLines(lines: seq[string], wild: bool = false): int =
   for handType in HandType.items:
     if handTypes.getOrDefault(handType).len > 0:
       var hands = handTypes[handType]
-      hands.sort(proc(a, b: Hand): int = compareHands(a, b, wild))
+      hands.sort(func(a, b: Hand): int = compareHands(a, b, wild))
 
       for hand in hands.mitems:
         result += currentRank * hand.bet
