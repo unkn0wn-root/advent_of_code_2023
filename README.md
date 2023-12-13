@@ -6,6 +6,6 @@
 
 ## Langs (so far) I've used to solve the AOC puzzles:
 
-day[1..5, 9..] - [Go](https://go.dev)
+day[1..5, 9..11] - [Go](https://go.dev)
 
-day[6..8] - [Nim](https://nim-lang.org)
+day[6..8, 12..] - [Nim](https://nim-lang.org)
