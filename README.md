@@ -11,3 +11,5 @@ day[1..5, 9..11] - [Go](https://go.dev)
 day[6..8, 12] - [Nim](https://nim-lang.org)
 
 day [13..] - [Crystal](https://crystal-lang.org)
+
+day [14, 15..] - [TypeScript](https://www.typescriptlang.org)
